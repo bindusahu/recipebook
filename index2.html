@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Recipe</title>
+   
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            background-image: url("https://t3.ftcdn.net/jpg/06/21/59/14/240_F_621591412_L0jjOY0Sq0xPZaUKPcf4SE3B2gnK9pjb.jpg");
+            background-size: cover;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-sizing: border-box;
+       }
+       h2{
+          color:yellow;
+       }
+       header {
+            background-color:darkblue;
+            color: greenyellow;
+            padding: 20px; /* Increased padding */
+            text-align: center;
+            font-size: 28px; /* Increased font size */
+       }
+
+       header input, header select, header button {
+            margin: 10px;
+            padding: 15px; /* Increased padding */
+            width: 300px; /* Increased width */
+            max-width: 100%;
+       }
+
+       #book {
+            display: flex;
+            justify-content: center;
+            padding: 30px; /* Increased padding */
+            flex-wrap: wrap;
+       }
+
+       .book-page {
+            width: 700px; /* Increased width */
+            height: 900px; /* Increased height */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 20px; /* Increased margin */
+            padding: 30px; /* Increased padding */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow size */
+            overflow: auto;
+            box-sizing: border-box;
+       }
+
+       .book-page h3 {
+            text-align: center;
+            font-size: 24px; /* Increased font size */
+       }
+
+       #add-recipe {
+            max-width: 600px; /* Increased width */
+            margin: 30px auto; /* Increased margin */
+            padding: 30px; /* Increased padding */
+            background-color:rgb(15, 16, 83);
+            border-radius: 15px; /* Increased border radius */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Increased shadow */
+            box-sizing: border-box;
+       }
+
+       #add-recipe form {
+            display: flex;
+            flex-direction: column;
+       }
+
+       #add-recipe input, #add-recipe textarea, #add-recipe select, #add-recipe button {
+            margin-bottom: 15px; /* Increased margin */
+            padding: 15px; /* Increased padding */
+            border: 1px solid #ddd;
+            border-radius: 8px; /* Increased border radius */
+            box-sizing: border-box;
+       }
+
+     #add-recipe button {
+    width: 250px; /* Increased width */
+    height: 60px; /* Increased height */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background-image: url("https://m.media-amazon.com/images/I/71p-uMsPA4L._AC_UF1000,1000_QL80_.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 18px; /* Increased font size */
+    border-radius: 8px; /* Increased border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Increased shadow size */
+    padding: 10px; /* Increased padding */
+    display: flex; 
+    justify-content: center; 
+    margin: 0 auto;
+}
+#add-recipe button:hover {
+    opacity: 0.8;
+}
+
+       img {
+            width: 700px; /* Increased width */
+            height: 400px; /* Increased height */
+            object-fit: cover;
+       }
+       #back {
+    background-image: url("https://previews.123rf.com/images/france68/france681504/france68150400037/39343061-the-word-back-written-on-a-road-sign-against-a-fence-wattle.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px; /* Increased width */
+    height: 70px; /* Increased height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 28px; /* Increased font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 20px auto; /* Added margin and centered */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recipe Book</h1>
+    </header>
+
+    <section id="add-recipe">
+        <h2>Add a New Recipe</h2>
+        <form id="recipeForm" onsubmit="addRecipe(event)">
+            <input type="text" id="recipeName" placeholder="Recipe Name" required>
+
+            <input type="text" id="recipeImage" placeholder="Image URL" required>
+           
+            <textarea id="recipeIngredients" placeholder="Ingredients" required></textarea>
+          
+            <textarea id="recipeInstructions" placeholder="Instructions" required></textarea>
+           
+            <select id="recipeCategory" required>
+                <option value="all">All Categories</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snacks">Snack</option>
+                <option value="dessert">Dessert</option>
+                <option value="beverage">Beverage</option>
+                <option value="non-vegetarian">non-vegetarian</option>
+                <option value="salad">Salad</option>
+                <option value="coffee">Coffee</option>
+                <option value="italian">Italian</option>
+                <option value="chinese">Chinese</option>
+            
+                <option value="mediterranean">Mediterranean</option>
+                <option value="baking">Baking</option>
+                <option value="pickles">Pickles</option>
+                <option value="frying">Frying</option>
+                <option value="ice cream">IceCream</option>
+                <option value="chhattisgarhi">Chhattisgarhi</option>
+            </select>
+            <button type="submit"></button>
+        </form>
+        
+    </section>
+    <a href="index1.html" ><button id="back"></button></a>
+    <script src="scripts.js"></script>
+</body>
+</html>
